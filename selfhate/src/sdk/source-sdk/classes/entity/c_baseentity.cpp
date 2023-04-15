@@ -45,3 +45,5 @@ bool C_BaseEntity::GetBoundingBox(BBox_t& out) {
 
     return true;
 }
+
+

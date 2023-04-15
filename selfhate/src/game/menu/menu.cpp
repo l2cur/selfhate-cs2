@@ -54,24 +54,13 @@ void menu::Render() {
     ImGuiIO& IO = ImGui::GetIO();
 
    auto s = ImVec2{}, p = ImVec2{}, gs = ImVec2{400, 300};
-    anim =
-        ImLerp(anim, 1.0f, 0.5f * (12.0f * ImGui::GetIO().DeltaTime));
-    ImGui::SetNextWindowSize(ImVec2(400 * anim, 300 * anim));
-    ImGui::PushFont(font::Menu_font);
-    ImGui::Begin(
-        "selfhate", nullptr,
-        ImGuiWindowFlags_::ImGuiWindowFlags_NoDecoration |
-            ImGuiWindowFlags_::
-                ImGuiWindowFlags_NoBackground);  
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
+    ImGui::SetNextWindowSize(ImVec2(600, 400));
+    ImGui::Begin("selfhate.xyz", nullptr,
+                 ImGuiWindowFlags_NoDecoration |
+                     ImGuiWindowFlags_NoBackground);  
     {
-        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
-        ImGui::SetNextWindowSize(ImVec2(600, 400));
-        ImGui::Begin(
-            "Hello, world!", nullptr,
-            ImGuiWindowFlags_NoDecoration |
-                ImGuiWindowFlags_NoBackground);  // Create a window called
-                                                 // "Hello, world!" and append
-                                                 // into it.
+
         s = ImVec2(
             ImGui::GetWindowSize().x - ImGui::GetStyle().WindowPadding.x * 2,
             ImGui::GetWindowSize().y - ImGui::GetStyle().WindowPadding.y * 2);
@@ -105,7 +94,7 @@ void menu::Render() {
             {
                 ImGui::PushFont(font::Menu_font);
                 ImGui::Checkbox("Box", &esp::bBoxEsp);
-                ImGui::Checkbox("Glow", &esp::bGlowEsp);
+                ImGui::Checkbox("Glow (Detected)", &esp::bGlowEsp);
                 ImGui::Checkbox("Helthbar", &esp::bHealthbar);
                 ImGui::Checkbox("Name", &esp::bNameEsp);
                 ImGui::Checkbox("Ignore teammates", &esp::bIgnoreTeammates);

@@ -120,5 +120,7 @@ void esp::Render() {
             pPawn->m_Glow().m_glowColorOverride() = GlowCol;
 
         }
+
+
     }
 }

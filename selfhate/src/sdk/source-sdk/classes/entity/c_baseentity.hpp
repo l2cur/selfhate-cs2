@@ -25,4 +25,6 @@ class C_BaseEntity : public CEntityInstance {
     SCHEMA_FIELD(m_MoveType, "C_BaseEntity", "m_MoveType", MoveType_t);
     SCHEMA_FIELD(m_fFlags, "C_BaseEntity", "m_fFlags", uint8_t);
     SCHEMA_FIELD(m_Glow, "C_BaseModelEntity", "m_Glow", CGlowProperty);
+
+
 };
